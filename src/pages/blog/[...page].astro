@@ -1,0 +1,71 @@
+---
+import { blogDateSort, readableDate } from "@utils";
+import type { GetStaticPaths, Page } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "@layouts/DefaultPage.astro";
+import { Picture } from "astro:assets";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+	const blogCollection = await getCollection("blog");
+	return [...paginate(blogCollection.concat().sort(blogDateSort), { pageSize: 3 })];
+};
+
+type Props = {
+	page: Page<CollectionEntry<"blog">>;
+};
+
+const { page } = Astro.props;
+
+const uniqueTags = Array.from(
+	new Set((await getCollection("blog")).flatMap((post) => post.data.tags)),
+);
+
+const description = "blogs etc";
+const title = "blogs etc";
+---
+
+<Layout {title} {description}>
+	<h1>Blog</h1>
+	<aside>
+		<h2>Tags:</h2>
+		<ul>
+			{
+				uniqueTags.map((tag) => (
+					<li>
+						<a href={`/blog/tags/${tag}/`}>{tag}</a>
+					</li>
+				))
+			}
+		</ul>
+	</aside>
+	<h2>Posts</h2>
+	{
+		page.data.map((post) => (
+			<section>
+				<div class="border-solid">
+					<a href={`/blog/${post.slug}/`}>
+						<Picture
+							src={post.data.ogImage}
+							alt={post.data.ogImageAlt}
+							formats={["avif", "webp"]}
+							densities={[1, 2]}
+							width="600"
+							loading="eager"
+						/>
+						<time datetime={`${readableDate(post.data.date)}`}>{readableDate(post.data.date)}</time>
+						<span>{post.data.title}</span>
+						<p>{post.data.description}</p>
+					</a>
+					{post.data.tags.map((tag) => (
+						<a href={`/blog/tags/${tag}/`}>{tag}</a>
+					))}
+				</div>
+			</section>
+		))
+	}
+
+	<div>
+		{page?.url.prev && <a href={page.url.prev}>Prev Page</a>}
+		{page?.url.next && <a href={page.url.next}>Next Page</a>}
+	</div>
+</Layout>

@@ -1,0 +1,43 @@
+---
+import "@assets/styles/global.css";
+import { Head } from "astro-capo";
+import SkipLinks from "@components/SkipLinks.astro";
+import { ViewTransitions } from "astro:transitions";
+import Meta from "@components/Meta.astro";
+import type { CollectionEntry } from "astro:content";
+// import ColorThemeToggle from "@components/ColorThemeToggle.astro";
+import VTColorThemeToggle from "@components/VTColorThemeToggle.astro";
+
+type Props = {
+	title: string;
+	description: string;
+	post?: CollectionEntry<"blog"> | undefined;
+};
+
+const { title, description, post = undefined } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+	<Head>
+		<script is:inline>
+			const e = localStorage.getItem("darkMode");
+			const d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			if (e) {
+				document.documentElement.classList.toggle("dark", e === "enabled");
+			} else {
+				document.documentElement.classList.toggle("dark", d);
+			}
+		</script>
+		<Meta {title} {description} {post} />
+		<ViewTransitions />
+	</Head>
+	<SkipLinks />
+	<!-- <ColorThemeToggle /> -->
+	<VTColorThemeToggle />
+	<body>
+		<main id="main-content">
+			<slot />
+		</main>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+---
+import "@assets/styles/global.css";
+import Layout from "@layouts/DefaultPage.astro";
+import { example } from "@utils";
+const title = "Example";
+const description = "Description";
+---
+
+<Layout {title} {description}>
+	<h1>{example}</h1>
+	<a href="/blog">blog</a>
+</Layout>
