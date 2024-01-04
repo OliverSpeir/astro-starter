@@ -1,7 +1,7 @@
 ---
 import { blogDateSort, readableDate } from "@utils";
-import type { GetStaticPaths, Page } from "astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
 import Layout from "@layouts/DefaultPage.astro";
 import { Picture } from "astro:assets";
 
@@ -9,10 +9,6 @@ export const getStaticPaths = (async ({ paginate }) => {
 	const blogCollection = await getCollection("blog");
 	return [...paginate(blogCollection.concat().sort(blogDateSort), { pageSize: 3 })];
 }) satisfies GetStaticPaths;
-
-type Props = {
-	page: Page<CollectionEntry<"blog">>;
-};
 
 const { page } = Astro.props;
 
