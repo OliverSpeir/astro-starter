@@ -61,7 +61,7 @@ const title = "blogs etc";
 	}
 
 	<div>
-		{page?.url.prev && <a href={page.url.prev}>Prev Page</a>}
-		{page?.url.next && <a href={page.url.next}>Next Page</a>}
+		{page.url.prev && <a href={page.url.prev}>Prev Page</a>}
+		{page.url.next && <a href={page.url.next}>Next Page</a>}
 	</div>
 </Layout>

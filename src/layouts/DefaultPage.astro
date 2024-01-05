@@ -14,7 +14,7 @@ type Props = {
 	post?: CollectionEntry<"blog"> | undefined;
 };
 
-const { title, description, post = undefined } = Astro.props;
+const { title, description, post } = Astro.props;
 ---
 
 <!doctype html>
