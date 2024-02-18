@@ -1,6 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 
 export const example = "Hello World";
+
 export function readableDate(
 	date: Date | undefined,
 	options: Intl.DateTimeFormatOptions = {
@@ -16,5 +17,6 @@ export function readableDate(
 
 	return date.toLocaleDateString("en-US", options);
 }
+
 export const blogDateSort = (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
 	b.data.date.getTime() - a.data.date.getTime();

@@ -1,5 +1,5 @@
 {
-	"extends": "astro/tsconfigs/strict",
+	"extends": "astro/tsconfigs/strictest",
 	"compilerOptions": {
 		"strictNullChecks": true,
 		"allowJs": true,
@@ -8,8 +8,8 @@
 			"@components/*": ["src/components/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@assets/*": ["src/assets/*"],
-			"@utils": ["src/assets/utils/index"]
-		}
+			"@utils": ["src/assets/utils/index"],
+		},
 	},
-	"exclude": ["dist/"]
+	"exclude": ["dist/"],
 }
