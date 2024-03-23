@@ -1,4 +1,3 @@
-/* eslint-disable */
 const darkModeToggles = document.querySelectorAll(".darkmode-toggle");
 
 const enableDarkMode = (store = true) => {

@@ -18,5 +18,6 @@ export function readableDate(
 	return date.toLocaleDateString("en-US", options);
 }
 
-export const blogDateSort = (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-	b.data.date.getTime() - a.data.date.getTime();
+export const blogDateSort = (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => {
+	return b.data.date.getTime() - a.data.date.getTime();
+};

@@ -20,15 +20,6 @@ const { title, description, post } = Astro.props;
 <!doctype html>
 <html lang="en" dir="ltr">
 	<Head>
-		<script is:inline>
-			const e = localStorage.getItem("darkMode");
-			const d = window.matchMedia("(prefers-color-scheme: dark)").matches;
-			if (e) {
-				document.documentElement.classList.toggle("dark", e === "enabled");
-			} else {
-				document.documentElement.classList.toggle("dark", d);
-			}
-		</script>
 		<Meta {title} {description} {post} />
 		<ViewTransitions />
 	</Head>
