@@ -2,7 +2,6 @@ const darkModeToggles = document.querySelectorAll(".darkmode-toggle");
 
 const enableDarkMode = (store = true) => {
 	document.documentElement.classList.add("dark");
-	setBrowserThemeColor("#27272a");
 	const darkModeToggles = document.querySelectorAll(".darkmode-toggle");
 	darkModeToggles.forEach((toggle) => {
 		switchSVG(
@@ -19,7 +18,6 @@ const switchSVG = (toggle, svgString) => {
 
 const disableDarkMode = (store = true) => {
 	document.documentElement.classList.remove("dark");
-	setBrowserThemeColor("#2f3a91");
 	const darkModeToggles = document.querySelectorAll(".darkmode-toggle");
 	darkModeToggles.forEach((toggle) => {
 		switchSVG(
@@ -28,11 +26,6 @@ const disableDarkMode = (store = true) => {
 		);
 	});
 	if (store) localStorage.setItem("darkMode", "disabled");
-};
-
-const setBrowserThemeColor = (color) => {
-	const metaThemeColor = document.querySelector("meta[name=theme-color]");
-	metaThemeColor.setAttribute("content", color);
 };
 
 const setTheme = () => {
