@@ -2,11 +2,11 @@
 import "@assets/styles/global.css";
 import { Head } from "astro-capo";
 import SkipLinks from "@components/SkipLinks.astro";
-// import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 import Meta from "@components/Meta.astro";
 import type { CollectionEntry } from "astro:content";
-import ColorThemeToggle from "@components/ColorThemeToggle.astro";
-// import VTColorThemeToggle from "@components/VTColorThemeToggle.astro";
+// import ColorThemeToggle from "@components/ColorThemeToggle.astro";
+import VTColorThemeToggle from "@components/VTColorThemeToggle.astro";
 
 type Props = {
 	title: string;
@@ -21,11 +21,11 @@ const { title, description, post } = Astro.props;
 <html lang="en" dir="ltr">
 	<Head>
 		<Meta {title} {description} {post} />
-		<!-- <ViewTransitions /> -->
+		<ViewTransitions />
 	</Head>
 	<SkipLinks />
-	<ColorThemeToggle />
-	<!-- <VTColorThemeToggle /> -->
+	<!-- <ColorThemeToggle /> -->
+	<VTColorThemeToggle />
 	<body>
 		<main id="main-content">
 			<slot />

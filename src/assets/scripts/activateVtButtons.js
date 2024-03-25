@@ -35,19 +35,18 @@ const setBrowserThemeColor = (color) => {
 	metaThemeColor.setAttribute("content", color);
 };
 
-const setDarkMode = () => {
+const setTheme = () => {
 	const darkMode = localStorage.getItem("darkMode");
 	const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 	if (darkMode === "enabled") {
-		enableDarkMode(false);
+		enableDarkMode();
 	} else if (darkMode === "disabled") {
-		disableDarkMode(false);
+		disableDarkMode();
 	} else {
 		isSystemDark ? enableDarkMode(false) : disableDarkMode(false);
 	}
 };
-setDarkMode();
 
 const activateToggles = (darkModeToggles) => {
 	darkModeToggles.forEach((darkModeToggle) => {
@@ -66,10 +65,9 @@ const activateToggles = (darkModeToggles) => {
 		});
 	});
 };
-activateToggles(darkModeToggles);
 
+activateToggles(darkModeToggles);
 document.addEventListener("astro:after-swap", () => {
 	activateToggles(document.querySelectorAll(".darkmode-toggle"));
-	setDarkMode();
+	setTheme();
 });
-window.addEventListener("pageshow", setDarkMode);

@@ -39,7 +39,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:description" content={description} />
 <meta property="og:site_name" content="" />
 <meta property="og:url" content={canonicalURL} />
-{!ogImage && !post  && <meta property="og:image" content={Astro.site + defaultOg} />}
+{!ogImage && !post && <meta property="og:image" content={Astro.site + defaultOg} />}
 {ogImage && !post && <meta property="og:image" content={Astro.site + ogImage} />}
 {ogImage && post && <meta property="og:image" content={Astro.site + post.data.ogImage.src} />}
 <meta property="og:image:alt" content={title} />
