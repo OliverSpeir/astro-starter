@@ -13,7 +13,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 	return uniqueTags.flatMap((tag) => {
 		const filteredPosts = posts.filter((post) => post.data.tags.includes(tag)).sort(blogDateSort);
-		return paginate(filteredPosts, { params: { tag }, pageSize: 3 });
+		return [...paginate(filteredPosts, { params: { tag }, pageSize: 3 })];
 	});
 }) satisfies GetStaticPaths;
 
