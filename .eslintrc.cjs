@@ -40,4 +40,7 @@ module.exports = {
 			},
 		},
 	],
+	globals: {
+		theme: "readonly",
+	},
 };

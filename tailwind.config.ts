@@ -3,7 +3,7 @@ import plugin from "tailwindcss/plugin";
 
 const config: Config = {
 	content: ["./src/**/*.{astro,js,ts,tsx,md,mdx}"],
-	darkMode: "class",
+	darkMode: ["selector", '[data-theme="dark"]'],
 	corePlugins: {
 		preflight: false,
 

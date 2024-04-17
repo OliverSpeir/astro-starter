@@ -1,12 +1,11 @@
 ---
 import "@assets/styles/global.css";
-import { Head } from "astro-capo";
 import SkipLinks from "@components/SkipLinks.astro";
 import { ViewTransitions } from "astro:transitions";
 import Meta from "@components/Meta.astro";
 import type { CollectionEntry } from "astro:content";
-// import ColorThemeToggle from "@components/ColorThemeToggle.astro";
-import VTColorThemeToggle from "@components/VTColorThemeToggle.astro";
+import ThemeManager from "@components/ThemeManager.astro";
+import ThemeToggleButton from "@components/ThemeToggleButton.astro";
 
 type Props = {
 	title: string;
@@ -19,14 +18,14 @@ const { title, description, post } = Astro.props;
 
 <!doctype html>
 <html lang="en" dir="ltr">
-	<Head>
+	<head>
+		<ThemeManager />
 		<Meta {title} {description} {post} />
 		<ViewTransitions />
-	</Head>
+	</head>
 	<SkipLinks />
-	<!-- <ColorThemeToggle /> -->
-	<VTColorThemeToggle />
 	<body>
+		<ThemeToggleButton />
 		<main id="main-content">
 			<slot />
 		</main>
