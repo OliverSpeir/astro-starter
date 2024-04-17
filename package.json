@@ -10,7 +10,7 @@
 		"check": "astro check",
 		"lint": "eslint . --ext .ts,.js,.astro --fix --format=codeframe",
 		"format": "prettier -w --cache . && prettier -w --cache **/*.astro",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"astro": "^4.5.9"
