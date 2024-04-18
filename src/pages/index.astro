@@ -8,4 +8,7 @@ const description = "Description";
 <Layout {title} {description}>
 	<h1>{example}</h1>
 	<a href="/blog">blog</a>
+	<script is:inline>
+		document.addEventListener("theme-changed", (event)=>console.log(event.detail.theme))
+	</script>
 </Layout>

@@ -19,13 +19,13 @@ const { title, description, post } = Astro.props;
 <!doctype html>
 <html lang="en" dir="ltr">
 	<head>
-		<ThemeManager />
+		<ThemeManager defaultTheme="dark"/>
 		<Meta {title} {description} {post} />
 		<ViewTransitions />
 	</head>
 	<SkipLinks />
 	<body>
-		<ThemeToggleButton />
+		<ThemeToggleButton/>
 		<main id="main-content">
 			<slot />
 		</main>
