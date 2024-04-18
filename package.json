@@ -13,14 +13,13 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
-		"astro": "^4.5.9"
+		"astro": "^4.6.2"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.5.10",
 		"@astrojs/sitemap": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
 		"@typescript-eslint/eslint-plugin": "^7.4.0",
-		"astro-capo": "^0.0.1",
 		"astro-robots-txt": "^1.0.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",

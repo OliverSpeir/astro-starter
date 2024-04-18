@@ -6,7 +6,7 @@
 			class extends HTMLElement {
 				connectedCallback() {
 					this.innerHTML = `
-                        <select>
+                        <select style="display: none;">
                         <option value="auto">Auto</option>
                         <option value="light">Light</option>
                         <option value="dark">Dark</option>
@@ -15,6 +15,7 @@
 					this.onchange = theme.setTheme(this.value);
 					this.ariaLabel = "Select Theme";
 					this.updateSelectedTheme();
+					this.style.display = "block";
 
 					document.addEventListener("theme-changed", (event) => {
 						this.updateSelectedTheme(event.detail.theme);
