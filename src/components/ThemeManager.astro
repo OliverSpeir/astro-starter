@@ -7,6 +7,7 @@ const { defaultTheme = "auto" } = Astro.props;
 ---
 
 <script is:inline data-default-theme={defaultTheme}>
+	console.log("running");
 	window.theme ??= (() => {
 		const defaultTheme = document.currentScript.getAttribute("data-default-theme");
 		const storageKey = "theme";
@@ -23,6 +24,7 @@ const { defaultTheme = "auto" } = Astro.props;
 		});
 
 		function applyTheme(theme) {
+			console.log("applying theme:", theme);
 			document.documentElement.dataset.theme = theme === "auto" ? systemTheme : theme;
 			document.dispatchEvent(
 				new CustomEvent("theme-changed", {
@@ -51,4 +53,9 @@ const { defaultTheme = "auto" } = Astro.props;
 		return { setTheme, getTheme, getSystemTheme, getDefaultTheme };
 	})();
 	theme.setTheme(theme.getTheme());
+</script>
+<script>
+	document.addEventListener("astro:after-swap", () =>
+		window.theme.setTheme(window.theme.getTheme()),
+	);
 </script>
