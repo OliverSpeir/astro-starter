@@ -19,6 +19,7 @@ module.exports = {
 			"warn",
 			{ varsIgnorePattern: "Props", ignoreRestSiblings: true },
 		],
+		"@typescript-eslint/triple-slash-reference": "off",
 	},
 	overrides: [
 		{
