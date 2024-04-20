@@ -6,12 +6,12 @@
 			class extends HTMLElement {
 				connectedCallback() {
 					this.innerHTML = `
-						<select>
-						<option value="auto">Auto</option>
-						<option value="light">Light</option>
-						<option value="dark">Dark</option>
-						</select>
-					`;
+            <select>
+              <option value="auto">Auto</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          `;
 					this.querySelector("select").onchange = (event) => theme.setTheme(event.target.value);
 					this.setAttribute("aria-label", "Select Theme");
 					this.updateSelectedTheme();
