@@ -8,7 +8,7 @@ type Props = {
 	post: CollectionEntry<"blog"> | undefined;
 };
 
-const defaultOg = "/social-preview.png";
+const defaultOg = "social-preview.png";
 const { title, description, ogImage, post } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
