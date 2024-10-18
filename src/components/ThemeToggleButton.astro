@@ -9,8 +9,8 @@
  *
  */
 
- type Props = {
-  themeIconRelationship?: "match" | "opposite" | undefined;
+type Props = {
+	themeIconRelationship?: "match" | "opposite" | undefined;
 };
 
 const { themeIconRelationship = "opposite" } = Astro.props;
@@ -19,35 +19,31 @@ const { themeIconRelationship = "opposite" } = Astro.props;
 <theme-toggle-button></theme-toggle-button>
 
 <script is:inline data-theme-icon-relationship={themeIconRelationship}>
-  if (!customElements.get("theme-toggle-button")) {
-    const themeIconRelationship = document.currentScript.getAttribute(
-      "data-theme-icon-relationship"
-    );
-    class ThemeToggleButton extends HTMLElement {
-      constructor() {
-        super();
-        this.attachShadow({ mode: "open" });
-        this.toggleTheme = this.toggleTheme.bind(this);
-        this.updateThemeIconAndAriaLabel =
-          this.updateThemeIconAndAriaLabel.bind(this);
-      }
+	if (!customElements.get("theme-toggle-button")) {
+		const themeIconRelationship = document.currentScript.getAttribute(
+			"data-theme-icon-relationship",
+		);
+		class ThemeToggleButton extends HTMLElement {
+			constructor() {
+				super();
+				this.attachShadow({ mode: "open" });
+				this.toggleTheme = this.toggleTheme.bind(this);
+				this.updateThemeIconAndAriaLabel = this.updateThemeIconAndAriaLabel.bind(this);
+			}
 
-      connectedCallback() {
-        this.render();
-        this.bindEvents();
-        this.updateThemeIconAndAriaLabel();
-      }
+			connectedCallback() {
+				this.render();
+				this.bindEvents();
+				this.updateThemeIconAndAriaLabel();
+			}
 
-      disconnectedCallback() {
-        this.removeEventListener("click", this.toggleTheme);
-        document.removeEventListener(
-          "theme-changed",
-          this.updateThemeIconAndAriaLabel
-        );
-      }
+			disconnectedCallback() {
+				this.removeEventListener("click", this.toggleTheme);
+				document.removeEventListener("theme-changed", this.updateThemeIconAndAriaLabel);
+			}
 
-      render() {
-        this.shadowRoot.innerHTML = `
+			render() {
+				this.shadowRoot.innerHTML = `
                 <style>
                     button {
                         background-color: transparent;
@@ -76,86 +72,77 @@ const { themeIconRelationship = "opposite" } = Astro.props;
                     </svg>
                 </button>
                 `;
-        this.updateThemeIconAndAriaLabel();
-      }
+				this.updateThemeIconAndAriaLabel();
+			}
 
-      bindEvents() {
-        this.addEventListener("click", this.toggleTheme);
-        document.addEventListener("theme-changed", (e) =>
-          this.updateThemeIconAndAriaLabel(
-            e.detail.currentTheme,
-            e.detail.systemTheme
-          )
-        );
-      }
+			bindEvents() {
+				this.addEventListener("click", this.toggleTheme);
+				document.addEventListener("theme-changed", (e) =>
+					this.updateThemeIconAndAriaLabel(e.detail.currentTheme, e.detail.systemTheme),
+				);
+			}
 
-      toggleTheme() {
-        const currentTheme = theme.getTheme();
-        const defaultTheme = theme.getDefaultTheme();
-        const systemTheme = theme.getSystemTheme();
-        let newTheme;
+			toggleTheme() {
+				const currentTheme = theme.getTheme();
+				const defaultTheme = theme.getDefaultTheme();
+				const systemTheme = theme.getSystemTheme();
+				let newTheme;
 
-        if (defaultTheme === "auto") {
-          newTheme =
-            currentTheme === "auto" || currentTheme === systemTheme
-              ? systemTheme === "dark"
-                ? "light"
-                : "dark"
-              : "auto";
-        } else {
-          newTheme =
-            currentTheme === defaultTheme
-              ? defaultTheme === "dark"
-                ? "light"
-                : "dark"
-              : currentTheme === "auto"
-                ? systemTheme === "dark"
-                  ? "light"
-                  : "dark"
-                : defaultTheme;
-        }
+				if (defaultTheme === "auto") {
+					newTheme =
+						currentTheme === "auto" || currentTheme === systemTheme
+							? systemTheme === "dark"
+								? "light"
+								: "dark"
+							: "auto";
+				} else {
+					newTheme =
+						currentTheme === defaultTheme
+							? defaultTheme === "dark"
+								? "light"
+								: "dark"
+							: currentTheme === "auto"
+								? systemTheme === "dark"
+									? "light"
+									: "dark"
+								: defaultTheme;
+				}
 
-        theme.setTheme(newTheme);
-        this.updateThemeIconAndAriaLabel(newTheme, systemTheme);
-      }
+				theme.setTheme(newTheme);
+				this.updateThemeIconAndAriaLabel(newTheme, systemTheme);
+			}
 
-      updateThemeIconAndAriaLabel(
-        currentTheme = theme.getTheme(),
-        systemTheme = theme.getSystemTheme()
-      ) {
-        const sunIcon =
-          themeIconRelationship === "opposite"
-            ? this.shadowRoot.querySelector("#sun")
-            : this.shadowRoot.querySelector("#moon");
-        const moonIcon =
-          themeIconRelationship === "opposite"
-            ? this.shadowRoot.querySelector("#moon")
-            : this.shadowRoot.querySelector("#sun");
+			updateThemeIconAndAriaLabel(
+				currentTheme = theme.getTheme(),
+				systemTheme = theme.getSystemTheme(),
+			) {
+				const sunIcon =
+					themeIconRelationship === "opposite"
+						? this.shadowRoot.querySelector("#sun")
+						: this.shadowRoot.querySelector("#moon");
+				const moonIcon =
+					themeIconRelationship === "opposite"
+						? this.shadowRoot.querySelector("#moon")
+						: this.shadowRoot.querySelector("#sun");
 
-        sunIcon.style.display =
-          currentTheme === "dark" ||
-          (currentTheme === "auto" && systemTheme === "dark")
-            ? "block"
-            : "none";
-        moonIcon.style.display =
-          currentTheme === "light" ||
-          (currentTheme === "auto" && systemTheme === "light")
-            ? "block"
-            : "none";
-        const newMode =
-          currentTheme === "dark" ||
-          (currentTheme === "auto" && systemTheme === "dark")
-            ? "light"
-            : "dark";
-        this.shadowRoot
-          .querySelector("button")
-          .setAttribute(
-            "aria-label",
-            `Theme toggle button: click to activate ${newMode} mode`
-          );
-      }
-    }
+				sunIcon.style.display =
+					currentTheme === "dark" || (currentTheme === "auto" && systemTheme === "dark")
+						? "block"
+						: "none";
+				moonIcon.style.display =
+					currentTheme === "light" || (currentTheme === "auto" && systemTheme === "light")
+						? "block"
+						: "none";
+				const newMode =
+					currentTheme === "dark" || (currentTheme === "auto" && systemTheme === "dark")
+						? "light"
+						: "dark";
+				this.shadowRoot
+					.querySelector("button")
+					.setAttribute("aria-label", `Theme toggle button: click to activate ${newMode} mode`);
+			}
+		}
 
-    customElements.define("theme-toggle-button", ThemeToggleButton);
-  }
+		customElements.define("theme-toggle-button", ThemeToggleButton);
+	}
 </script>

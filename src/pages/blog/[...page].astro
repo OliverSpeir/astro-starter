@@ -39,7 +39,8 @@ const title = "blogs etc";
 		page.data.map((post) => (
 			<section>
 				<div class="border-solid">
-					<a href={`/blog/${post.slug}/`}>
+					{/* this String(post.slug) and String(tag) nonsense is because tseslint is seeing post.slug as any due to some issue infering I have yet to look into */}
+					<a href={`/blog/${String(post.slug)}/`}>
 						<Picture
 							src={post.data.ogImage}
 							alt={post.data.ogImageAlt}
@@ -48,12 +49,12 @@ const title = "blogs etc";
 							width="600"
 							loading="eager"
 						/>
-						<time datetime={`${readableDate(post.data.date)}`}>{readableDate(post.data.date)}</time>
+						<time datetime={readableDate(post.data.date)}>{readableDate(post.data.date)}</time>
 						<span>{post.data.title}</span>
 						<p>{post.data.description}</p>
 					</a>
 					{post.data.tags.map((tag) => (
-						<a href={`/blog/tags/${tag}/`}>{tag}</a>
+						<a href={`/blog/tags/${String(tag)}/`}>{tag}</a>
 					))}
 				</div>
 			</section>

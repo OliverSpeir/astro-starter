@@ -47,6 +47,7 @@ const config: Config = {
 	},
 
 	plugins: [
+		// eslint-disable-next-line @typescript-eslint/unbound-method
 		plugin(({ addBase, theme }) => {
 			addBase({
 				// Small reset, preflight include a lot of stuff we don't use so let's make our own

@@ -7,14 +7,13 @@ const { defaultTheme = "auto" } = Astro.props;
 ---
 
 <script is:inline data-default-theme={defaultTheme}>
-	console.log("running");
 	window.theme ??= (() => {
 		const defaultTheme = document.currentScript.getAttribute("data-default-theme");
 		const storageKey = "theme";
 		const store =
 			typeof localStorage !== "undefined"
 				? localStorage
-				: { getItem: () => null, setItem: () => {} };
+				: { getItem: () => null, setItem: () => null };
 
 		const mediaMatcher = window.matchMedia("(prefers-color-scheme: light)");
 		let systemTheme = mediaMatcher.matches ? "light" : "dark";
@@ -24,7 +23,6 @@ const { defaultTheme = "auto" } = Astro.props;
 		});
 
 		function applyTheme(theme) {
-			console.log("applying theme:", theme);
 			document.documentElement.dataset.theme = theme === "auto" ? systemTheme : theme;
 			document.dispatchEvent(
 				new CustomEvent("theme-changed", {
