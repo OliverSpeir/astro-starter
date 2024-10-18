@@ -1,16 +1,18 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
 
 type Props = {
 	title: string;
 	description: string;
-	ogImage?: string;
+	ogImage?: ImageMetadata | undefined;
 	post: CollectionEntry<"blog"> | undefined;
 };
 
-const defaultOg = "social-preview.png";
+const defaultOg = "/social-preview.png";
 const { title, description, ogImage, post } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+console.log(ogImage);
 ---
 
 <title>{title}</title>
@@ -43,11 +45,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 {
 	!ogImage && !post && (
-		<meta property="og:image" content={new URL(String(Astro.site) + defaultOg)} />
+		<meta property="og:image" content={new URL(defaultOg, Astro.site).toString()} />
 	)
 }
-{ogImage && !post && <meta property="og:image" content={new URL(String(Astro.site) + ogImage)} />}
-{post && <meta property="og:image" content={new URL(String(Astro.site) + post.data.ogImage.src)} />}
+{
+	ogImage && !post && (
+		<meta property="og:image" content={new URL(ogImage.src, Astro.site).toString()} />
+	)
+}
+{
+	post && (
+		<meta property="og:image" content={new URL(post.data.ogImage.src, Astro.site).toString()} />
+	)
+}
+
 <meta property="og:image:alt" content={title} />
 
 <meta name="twitter:card" content="summary_large_image" />
