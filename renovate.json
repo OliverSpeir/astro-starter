@@ -10,7 +10,7 @@
 			"automerge": true
 		},
 		{
-			"groupName": "update package.json every time",
+			"groupName": "package.json",
 			"matchPackageNames": ["*"],
 			"rangeStrategy": "bump"
 		}
