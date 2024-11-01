@@ -7,7 +7,11 @@
 			"groupSlug": "all-minor-patch",
 			"matchUpdateTypes": ["minor", "patch"],
 			"matchPackageNames": ["*"],
-			"automerge": true,
+			"automerge": true
+		},
+		{
+			"groupName": "update package.json every time",
+			"matchPackageNames": ["*"],
 			"rangeStrategy": "bump"
 		}
 	]
