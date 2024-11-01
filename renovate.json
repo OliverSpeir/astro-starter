@@ -6,7 +6,8 @@
 			"groupName": "all non-major dependencies",
 			"groupSlug": "all-minor-patch",
 			"matchUpdateTypes": ["minor", "patch"],
-			"matchPackageNames": ["*"]
+			"matchPackageNames": ["*"],
+			"automerge": true
 		}
 	]
 }
