@@ -82,7 +82,7 @@ export default tseslint.config(
 		},
 	},
 
-	// Those files run in the browser and need the browser globals
+	// Files that run in the browser and need the browser globals
 	{
 		files: ["src/assets/scripts/*"],
 		languageOptions: {
