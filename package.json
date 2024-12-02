@@ -21,8 +21,8 @@
 		"@eslint/js": "^9.16.0",
 		"@types/eslint": "^9.6.1",
 		"@types/eslint__js": "^8.42.3",
-		"@typescript-eslint/eslint-plugin": "^8.16.0",
-		"@typescript-eslint/parser": "^8.16.0",
+		"@typescript-eslint/eslint-plugin": "^8.17.0",
+		"@typescript-eslint/parser": "^8.17.0",
 		"astro-robots-txt": "^1.0.0",
 		"eslint": "^9.16.0",
 		"eslint-formatter-codeframe": "^7.32.1",
@@ -35,7 +35,7 @@
 		"sharp": "^0.33.5",
 		"tailwindcss": "^3.4.15",
 		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.16.0"
+		"typescript-eslint": "^8.17.0"
 	},
 	"packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
 }
