@@ -1,7 +1,7 @@
 ---
 import "@assets/styles/global.css";
 import SkipLinks from "@components/SkipLinks.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Meta from "@components/Meta.astro";
 import type { CollectionEntry } from "astro:content";
 import type { ImageMetadata } from "astro";
@@ -22,7 +22,7 @@ const { title, description, post, ogImage } = Astro.props;
 <html lang="en" dir="ltr">
 	<head>
 		<Meta {title} {description} {post} {ogImage} />
-		<ViewTransitions />
+		<ClientRouter />
 		<ThemeManager />
 	</head>
 	<SkipLinks />

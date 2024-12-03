@@ -1,10 +1,9 @@
 import { defineConfig } from "astro/config";
-import type { AstroUserConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 
-const config: AstroUserConfig = defineConfig({
+export default defineConfig({
 	site: "http://www.example.com",
 	integrations: [
 		tailwind({
@@ -14,5 +13,3 @@ const config: AstroUserConfig = defineConfig({
 		robotsTxt(),
 	],
 });
-
-export default defineConfig(config);

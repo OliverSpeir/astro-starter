@@ -77,8 +77,7 @@ export default tseslint.config(
 	{
 		files: ["src/env.d.ts"],
 		rules: {
-			"@typescript-eslint/consistent-type-definitions": ["off"],
-			"@typescript-eslint/triple-slash-reference": ["off"],
+			"@typescript-eslint/consistent-type-definitions": ["error", "interface"],
 		},
 	},
 
