@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       astro:
-        specifier: ^5.0.8
-        version: 5.0.8(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0)
+        specifier: ^5.0.9
+        version: 5.0.9(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
@@ -20,7 +20,7 @@ importers:
         version: 3.2.1
       '@astrojs/tailwind':
         specifier: ^5.1.3
-        version: 5.1.3(astro@5.0.8(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0))(tailwindcss@3.4.16)
+        version: 5.1.3(astro@5.0.9(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0))(tailwindcss@3.4.16)
       '@eslint/js':
         specifier: ^9.17.0
         version: 9.17.0
@@ -986,8 +986,8 @@ packages:
   astro-robots-txt@1.0.0:
     resolution: {integrity: sha512-6JQSLid4gMhoWjOm85UHLkgrw0+hHIjnJVIUqxjU2D6feKlVyYukMNYjH44ZDZBK1P8hNxd33PgWlHzCASvedA==}
 
-  astro@5.0.8:
-    resolution: {integrity: sha512-nW4TmRCeG3t2iDmm91KPvYpYNljNfjeaneN4BX463DKAZ3MPmUn92aKefOXC0bjMHQ2Gamc8MIZ6sORS2EhyAQ==}
+  astro@5.0.9:
+    resolution: {integrity: sha512-6jRMPSB+V82y/l8XOylPYJz78ux268nNNV2SLRvUaT4faf18rvIFAR33Y25wTM0Oeukcv1951xFuFsmAkQc+jg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2790,9 +2790,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/tailwind@5.1.3(astro@5.0.8(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0))(tailwindcss@3.4.16)':
+  '@astrojs/tailwind@5.1.3(astro@5.0.9(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0))(tailwindcss@3.4.16)':
     dependencies:
-      astro: 5.0.8(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0)
+      astro: 5.0.9(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
       postcss-load-config: 4.0.2(postcss@8.4.49)
@@ -3550,7 +3550,7 @@ snapshots:
       valid-filename: 4.0.0
       zod: 3.23.8
 
-  astro@5.0.8(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0):
+  astro@5.0.9(jiti@1.21.6)(rollup@4.24.2)(typescript@5.7.2)(yaml@2.6.0):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
