@@ -12,7 +12,7 @@
 		"format": "prettier -w --cache . && prettier -w --cache **/*.astro"
 	},
 	"dependencies": {
-		"astro": "^5.1.5"
+		"astro": "^5.1.6"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
@@ -21,8 +21,8 @@
 		"@eslint/js": "^9.18.0",
 		"@types/eslint": "^9.6.1",
 		"@types/eslint__js": "^8.42.3",
-		"@typescript-eslint/eslint-plugin": "^8.19.1",
-		"@typescript-eslint/parser": "^8.19.1",
+		"@typescript-eslint/eslint-plugin": "^8.20.0",
+		"@typescript-eslint/parser": "^8.20.0",
 		"astro-robots-txt": "^1.0.0",
 		"eslint": "^9.18.0",
 		"eslint-formatter-codeframe": "^7.32.1",
@@ -35,7 +35,7 @@
 		"sharp": "^0.33.5",
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.7.3",
-		"typescript-eslint": "^8.19.1"
+		"typescript-eslint": "^8.20.0"
 	},
-	"packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+	"packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }
