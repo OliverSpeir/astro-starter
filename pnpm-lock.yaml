@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@tailwindcss/vite':
-        specifier: ^4.0.8
-        version: 4.0.8(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.6.0))
       astro:
         specifier: ^5.3.0
         version: 5.3.0(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.24.2)(typescript@5.7.3)(yaml@2.6.0)
@@ -24,6 +21,9 @@ importers:
       '@eslint/js':
         specifier: ^9.21.0
         version: 9.21.0
+      '@tailwindcss/vite':
+        specifier: ^4.0.8
+        version: 4.0.8(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.6.0))
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
