@@ -83,7 +83,7 @@ export default tseslint.config(
 
 	// Files that run in the browser and need the browser globals
 	{
-		files: ["src/assets/scripts/*"],
+		files: ["src/lib/modules/client/*"],
 		languageOptions: {
 			globals: {
 				...Object.fromEntries(Object.entries(globals.node).map(([key]) => [key, "off"])),

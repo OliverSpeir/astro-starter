@@ -9,8 +9,8 @@
 			"@components/*": ["src/components/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@assets/*": ["src/assets/*"],
-			"@utils": ["src/assets/utils/index"]
+			"@modules/*": ["src/lib/modules/*"]
 		}
 	},
-	"exclude": ["dist/"]
+	"exclude": ["dist", "node_modules", ".vscode"]
 }

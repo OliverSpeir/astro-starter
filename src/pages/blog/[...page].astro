@@ -1,5 +1,5 @@
 ---
-import { blogDateSort, readableDate } from "@utils";
+import { blogDateSort, readableDate } from "@modules/server";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/DefaultPage.astro";
@@ -28,7 +28,7 @@ const title = "blogs etc";
 			{
 				uniqueTags.map((tag) => (
 					<li>
-						<a href={`/blog/tags/${tag}/`}>{tag}</a>
+						<a href={`/blog/tags/${String(tag)}/`}>{tag}</a>
 					</li>
 				))
 			}

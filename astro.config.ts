@@ -1,15 +1,15 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
 	site: "http://www.example.com",
-	integrations: [
-		tailwind({
-			applyBaseStyles: false,
-		}),
-		sitemap(),
-		robotsTxt(),
-	],
+	integrations: [sitemap(), robotsTxt()],
+	vite: {
+		plugins: [tailwindcss()],
+		css: {
+			transformer: "lightningcss",
+		},
+	},
 });
