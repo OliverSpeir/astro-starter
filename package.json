@@ -19,8 +19,8 @@
 		"@astrojs/sitemap": "^3.3.0",
 		"@eslint/js": "^9.22.0",
 		"@types/eslint": "^9.6.1",
-		"@typescript-eslint/eslint-plugin": "^8.26.1",
-		"@typescript-eslint/parser": "^8.26.1",
+		"@typescript-eslint/eslint-plugin": "^8.27.0",
+		"@typescript-eslint/parser": "^8.27.0",
 		"astro-robots-txt": "^1.0.0",
 		"eslint": "^9.22.0",
 		"eslint-formatter-codeframe": "^7.32.1",
@@ -34,7 +34,7 @@
 		"tailwindcss": "^4.0.14",
 		"@tailwindcss/vite": "^4.0.14",
 		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.26.1"
+		"typescript-eslint": "^8.27.0"
 	},
 	"packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af"
 }
