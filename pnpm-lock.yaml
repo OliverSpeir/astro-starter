@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       astro:
-        specifier: ^5.7.8
-        version: 5.7.8(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.3)(yaml@2.6.0)
+        specifier: ^5.7.9
+        version: 5.7.9(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.3)(yaml@2.6.0)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
@@ -1035,8 +1035,8 @@ packages:
   astro-robots-txt@1.0.0:
     resolution: {integrity: sha512-6JQSLid4gMhoWjOm85UHLkgrw0+hHIjnJVIUqxjU2D6feKlVyYukMNYjH44ZDZBK1P8hNxd33PgWlHzCASvedA==}
 
-  astro@5.7.8:
-    resolution: {integrity: sha512-82ku6+wOGXP5c5+YOkBzEGJ/k8/GVSeN0xD/TNUrPf5nvWpGGpngxtUAwuruKF6wIxRC1/SwlUVCs/4QT98iZQ==}
+  astro@5.7.9:
+    resolution: {integrity: sha512-P0cLijpmu4xZEXIh83ROOJqiCWRA7KSo24nhRLIjbMkiPElXu2qL1c28m7xhylCXeHa0lnCGPLyNjs1Wx3GyxA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3655,7 +3655,7 @@ snapshots:
       valid-filename: 4.0.0
       zod: 3.24.1
 
-  astro@5.7.8(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.3)(yaml@2.6.0):
+  astro@5.7.9(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.3)(yaml@2.6.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
