@@ -12,7 +12,7 @@
 		"format": "prettier -w --cache . && prettier -w --cache **/*.astro"
 	},
 	"dependencies": {
-		"astro": "^5.13.0"
+		"astro": "^5.13.2"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
